@@ -2,6 +2,7 @@
     "name": "maxhexlet/project_2",
     "description": "Hexlet project 2",
     "type": "library",
+    "bin": ["bin/gendiff"],
     "authors": [
         {
             "name": "MaxSmakov",
