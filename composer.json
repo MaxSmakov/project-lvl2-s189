@@ -1,0 +1,18 @@
+{
+    "name": "maxhexlet/project_2",
+    "description": "Hexlet project 2",
+    "type": "library",
+    "license": "1",
+    "authors": [
+        {
+            "name": "MaxSmakov",
+            "email": "maxsmakov@gmail.com"
+        }
+    ],
+    "require": {
+        "docopt/docopt": "^1.0"
+    },
+    "autoload": {
+      "files": ["src/Cli.php"]
+    }
+}
