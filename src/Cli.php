@@ -28,7 +28,7 @@ function genDiff($pathToFile1, $pathToFile2)
     $arr1 = jsonToArr($pathToFile1);
     $arr2 = jsonToArr($pathToFile2);
 
-    foreach ($arr1 as $key=>$value) {
+    foreach ($arr1 as $key => $value) {
         if (!array_key_exists($key, $arr2)) {
             $part3[$key] = $value;
         } else {
@@ -56,20 +56,19 @@ function jsonToArr($path)
     return array_map(
         function ($i) {
             return boolToString($i);
-        }, $arr
-    );
+        }, $arr);
 }
 
 function arrayToStr($arr1, $prefix = '    ', $arr2 = null)
 {
     $str = '';
     if ($arr2) {
-        foreach ($arr2 as $key=>$value) {
+        foreach ($arr2 as $key => $value) {
             $str .= "  + " . $key . ": " . $arr2[$key] .PHP_EOL . "  - " .
             $key . ": " . $arr1[$key] . PHP_EOL;
         }
     } else {
-        foreach ($arr1 as $key=>$value) {
+        foreach ($arr1 as $key => $value) {
             $str .= $prefix . $key . ": " . $arr1[$key] . PHP_EOL;
         }
     }
@@ -79,10 +78,10 @@ function boolToString($item)
 {
     if (is_bool($item)) {
         switch ($item) {
-        case true:
-            return 'true';
-        case false:
-            return 'false';
+          case true:
+          return 'true';
+          case false:
+          return 'false';
         }
     }
     // return "\"{$variable}\"";
