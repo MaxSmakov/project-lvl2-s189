@@ -4,4 +4,4 @@
 
 require_once __DIR__ . '/../src/rightPath.php';
 
-\GenerateDiff\Cli\run();
+\GenerateDiff\run();
