@@ -58,7 +58,7 @@ function jsonToArr($path)
             return boolToString($i);
         },
         $arr
-      );
+    );
 }
 
 function arrayToStr($arr1, $prefix = '    ', $arr2 = null)
@@ -81,9 +81,9 @@ function boolToString($item)
     if (is_bool($item)) {
         switch ($item) {
             case true:
-            return 'true';
+                return 'true';
             case false:
-            return 'false';
+                return 'false';
         }
     }
     // return "\"{$variable}\"";
