@@ -16,7 +16,7 @@ class GenDiffTest extends TestCase
   + verbose: true
 }
 EXPECTED;
-    private function _getPath($name)
+    private function getPath($name)
     {
         return self::FIXTURES_DIR . DIRECTORY_SEPARATOR . $name;
     }
@@ -24,14 +24,14 @@ EXPECTED;
     {
         $this->assertEquals(
             self::EXPECTED,
-            genDiff($this->_getPath('before.json'), $this->_getPath('after.json'))
+            genDiff($this->getPath('before.json'), $this->getPath('after.json'))
         );
     }
     public function testYaml()
     {
         $this->assertEquals(
             self::EXPECTED,
-            genDiff($this->_getPath('before.yaml'), $this->_getPath('after.yaml'))
+            genDiff($this->getPath('before.yaml'), $this->getPath('after.yaml'))
         );
     }
 }
