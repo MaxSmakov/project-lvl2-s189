@@ -10,7 +10,9 @@
         }
     ],
     "require": {
-        "docopt/docopt": "^1.0"
+        "docopt/docopt": "^1.0",
+        "funct/funct": "*",
+        "symfony/yaml": "*"
     },
     "require-dev": {
           "phpunit/phpunit": "*",
@@ -21,6 +23,8 @@
       "phpunit": "phpunit"
     },
     "autoload": {
-      "files": ["src/Cli.php"]
+      "files": ["src/Cli.php",
+      "src/generateDiff.php",
+      "src/library.php"]
     }
 }
