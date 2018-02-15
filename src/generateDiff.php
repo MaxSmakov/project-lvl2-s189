@@ -69,11 +69,11 @@ function output($arr)
                 return getOutputString($item['key'], $item['before'], '-');
               break;
             case 'changed':
-                  $result[] = getOutputString($item['key'], $item['after'], '+');
-                  $result[] = getOutputString($item['key'], $item['before'], '-');
-              return $result;
+                $result[] = getOutputString($item['key'], $item['after'], '+');
+                $result[] = getOutputString($item['key'], $item['before'], '-');
+                return $result;
             default:
-              return '';
+                return '';
         }
     }, $arr);
     return implode(
