@@ -41,3 +41,8 @@ function boolToString($item)
     }
     return $item;
 }
+
+function getIndent($level)
+{
+    return str_repeat(' ', $level * 2 + 2);
+}

@@ -1,0 +1,10 @@
+host: "hexlet.io"
+timeout: 10
+get: true
+settings:
+  timeout: 290
+  speed: "slow"
+  standBy:
+      drums: "gretch"
+      sticks: "vic firth"
+      cymbals: "zildjian"

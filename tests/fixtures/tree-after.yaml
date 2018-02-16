@@ -1,0 +1,9 @@
+host: "hexlet.io"
+timeout: 50
+set: false
+settings:
+  timeout: 20
+  speed: "medium"
+  standBy:
+    drums: "pearl"
+    sticks: "tama"
