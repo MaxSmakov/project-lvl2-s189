@@ -68,30 +68,30 @@ function arrDiff($array1, $array2)
 function output($arr)
 {
     $iter = function ($arr, $level) use (&$iter) {
-      return array_map(function ($item) use ($level, $iter){
-          switch ($item['type']) {
-              case 'nested':
+        return array_map(function ($item) use ($level, $iter) {
+            switch ($item['type']) {
+                case 'nested':
                   return [
                       getIndent($level) . "  {$item['key']}: {",
                       $iter($item['children'], $level + 1),
                       getIndent($level) . "  }"
-                  ];
-              case 'unchanged':
+                    ];
+                case 'unchanged':
                   return getOutputString($level, $item['key'], $item['after']);
-              case 'added':
+                case 'added':
                   return getOutputString($level, $item['key'], $item['after'], '+');
                 break;
-              case 'removed':
+                case 'removed':
                   return getOutputString($level, $item['key'], $item['before'], '-');
                 break;
-              case 'changed':
-                  $result[] = getOutputString($level, $item['key'], $item['after'], '+');
-                  $result[] = getOutputString($level, $item['key'], $item['before'], '-');
+                case 'changed':
+                    $result[] = getOutputString($level, $item['key'], $item['after'], '+');
+                    $result[] = getOutputString($level, $item['key'], $item['before'], '-');
                   return $result;
-              default:
+                default:
                   return '';
-          }
-      }, $arr);
+            }
+        }, $arr);
     };
     return implode(
         PHP_EOL,
@@ -106,10 +106,10 @@ function output($arr)
 function getOutputString($level, $key, $value, $prefix = ' ')
 {
     if (is_array($value)) {
-      $map = array_map(function ($key) use ($value, $level) {
-        return getOutputString($level + 1, $key, $value[$key]);
-      }, array_keys($value));
-      return
+        $map = array_map(function ($key) use ($value, $level) {
+            return getOutputString($level + 1, $key, $value[$key]);
+        }, array_keys($value));
+        return
           [
               getIndent($level) . $prefix .
               " {$key}: {",
