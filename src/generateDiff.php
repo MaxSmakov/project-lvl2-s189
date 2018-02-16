@@ -71,25 +71,25 @@ function output($arr)
         return array_map(function ($item) use ($level, $iter) {
             switch ($item['type']) {
                 case 'nested':
-                  return [
-                      getIndent($level) . "  {$item['key']}: {",
-                      $iter($item['children'], $level + 1),
-                      getIndent($level) . "  }"
-                    ];
+                    return [
+                        getIndent($level) . "  {$item['key']}: {",
+                        $iter($item['children'], $level + 1),
+                        getIndent($level) . "  }"
+                      ];
                 case 'unchanged':
-                  return getOutputString($level, $item['key'], $item['after']);
+                    return getOutputString($level, $item['key'], $item['after']);
                 case 'added':
-                  return getOutputString($level, $item['key'], $item['after'], '+');
+                    return getOutputString($level, $item['key'], $item['after'], '+');
                 break;
                 case 'removed':
-                  return getOutputString($level, $item['key'], $item['before'], '-');
+                    return getOutputString($level, $item['key'], $item['before'], '-');
                 break;
                 case 'changed':
                     $result[] = getOutputString($level, $item['key'], $item['after'], '+');
                     $result[] = getOutputString($level, $item['key'], $item['before'], '-');
-                  return $result;
+                    return $result;
                 default:
-                  return '';
+                    return '';
             }
         }, $arr);
     };
