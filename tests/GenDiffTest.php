@@ -47,7 +47,7 @@ class GenDiffTest extends TestCase
     }
     public function testPlainReport()
     {
-      $this->assertEquals(
+        $this->assertEquals(
             EXPECTED_PLAIN,
             genDiff('plain', $this->getPath('tree-before.json'), $this->getPath('tree-after.json'))
         );
