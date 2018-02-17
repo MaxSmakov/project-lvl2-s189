@@ -25,6 +25,8 @@
     "autoload": {
       "files": ["src/Cli.php",
       "src/generateDiff.php",
-      "src/library.php"]
+      "src/library.php",
+      "src/reports.php",
+      "tests/expected.php"]
     }
 }

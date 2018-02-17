@@ -20,5 +20,5 @@ Options:
 DOC;
 
     $args = (new \Docopt\Handler)->handle($doc);
-    echo genDiff($args['<firstFile>'], $args['<secondFile>']) . PHP_EOL;
+    echo genDiff($args['--format'], $args['<firstFile>'], $args['<secondFile>']) . PHP_EOL;
 }
