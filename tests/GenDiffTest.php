@@ -7,7 +7,6 @@ use const GenerateDiff\Tests\EXPECTED_TREE;
 use const GenerateDiff\Tests\EXPECTED_FLAT;
 use const GenerateDiff\Tests\EXPECTED_PLAIN;
 
-
 class GenDiffTest extends TestCase
 {
     const FIXTURES_DIR = 'tests'  . DIRECTORY_SEPARATOR . 'fixtures';
