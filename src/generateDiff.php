@@ -9,11 +9,11 @@ use function GenerateDiff\Reports\report;
 
 function genDiff($format, $pathToFile1, $pathToFile2)
 {
-    $fileExtension1 = getExtension($pathToFile1);
-    $fileExtension2 = getExtension($pathToFile2);
-    $content1 = parseContent(file_get_contents($pathToFile1), $fileExtension1);
-    $content2 = parseContent(file_get_contents($pathToFile2), $fileExtension2);
     try {
+        $fileExtension1 = getExtension($pathToFile1);
+        $fileExtension2 = getExtension($pathToFile2);
+        $content1 = parseContent(file_get_contents($pathToFile1), $fileExtension1);
+        $content2 = parseContent(file_get_contents($pathToFile2), $fileExtension2);
         return report($format, arrDiff($content1, $content2));
     } catch (\Exception $e) {
         return $e->getMessage() . PHP_EOL;
