@@ -44,3 +44,70 @@ Property 'settings.standBy.sticks' was changed. From 'vic firth' to 'tama'
 Property 'settings.standBy.cymbals' was removed
 Property 'set' was added with value: 'false'
 PLAIN;
+
+const EXPECTED_JSON = <<<JSON
+[
+    {
+        "type": "unchanged",
+        "key": "host",
+        "value": "hexlet.io"
+    },
+    {
+        "type": "changed",
+        "key": "timeout",
+        "before": 10,
+        "after": 50
+    },
+    {
+        "type": "removed",
+        "key": "get",
+        "value": "true"
+    },
+    {
+        "type": "nested",
+        "key": "settings",
+        "children": [
+            {
+                "type": "changed",
+                "key": "timeout",
+                "before": 290,
+                "after": 20
+            },
+            {
+                "type": "changed",
+                "key": "speed",
+                "before": "slow",
+                "after": "medium"
+            },
+            {
+                "type": "nested",
+                "key": "standBy",
+                "children": [
+                    {
+                        "type": "changed",
+                        "key": "drums",
+                        "before": "gretch",
+                        "after": "pearl"
+                    },
+                    {
+                        "type": "changed",
+                        "key": "sticks",
+                        "before": "vic firth",
+                        "after": "tama"
+                    },
+                    {
+                        "type": "removed",
+                        "key": "cymbals",
+                        "value": "zildjian"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "added",
+        "key": "set",
+        "value": "false"
+    }
+]
+JSON;

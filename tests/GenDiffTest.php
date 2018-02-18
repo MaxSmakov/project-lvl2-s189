@@ -6,7 +6,7 @@ use function GenerateDiff\genDiff;
 
 class GenDiffTest extends TestCase
 {
-    const FIXTURES_DIR = 'tests'  . DIRECTORY_SEPARATOR . 'fixtures';
+    const FIXTURES_DIR = 'tests' . DIRECTORY_SEPARATOR . 'fixtures';
 
     private function getPath($name)
     {
@@ -46,6 +46,13 @@ class GenDiffTest extends TestCase
         $this->assertEquals(
             EXPECTED_PLAIN,
             genDiff('plain', $this->getPath('tree-before.json'), $this->getPath('tree-after.json'))
+        );
+    }
+    public function testJsonReport()
+    {
+        $this->assertEquals(
+            EXPECTED_JSON,
+            genDiff('json', $this->getPath('tree-before.yaml'), $this->getPath('tree-after.json'))
         );
     }
 }
