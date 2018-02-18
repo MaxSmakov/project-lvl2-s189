@@ -3,9 +3,6 @@ namespace GenerateDiff\Tests;
 
 use PHPUnit\Framework\TestCase;
 use function GenerateDiff\genDiff;
-use const GenerateDiff\Tests\EXPECTED_TREE;
-use const GenerateDiff\Tests\EXPECTED_FLAT;
-use const GenerateDiff\Tests\EXPECTED_PLAIN;
 
 class GenDiffTest extends TestCase
 {

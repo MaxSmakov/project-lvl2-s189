@@ -9,11 +9,18 @@ function report($format, $arr)
     switch ($format) {
         case 'pretty':
             return prettyReport($arr);
+        case 'json':
+            return jsonReport($arr);
         case 'plain':
             return plainReport($arr);
         default:
-            throw new \Exception('You can choose only \'plain\' or \'pretty\' report format!');
+            throw new \Exception('You can choose only \'plain\', \'json\' or \'pretty\' report format!');
     }
+}
+
+function jsonReport($arr)
+{
+    return json_encode($arr, JSON_PRETTY_PRINT);
 }
 
 function plainReport($arr)
